@@ -271,12 +271,16 @@ export default class QiCoilTab extends Component {
     }
 
     openAlbumsDetails(dataArray) {
-        this.props.navigation.navigate('AlbumsDetails', {
-            callType: 'QiCoilTab',
-            albumArray: dataArray,
-            transition: 'bottomUp',
-            onNavigateBack: this.handleOnNavigateBack.bind(this),
-        });
+        if(dataArray.lock == false || dataArray.is_free == 1){
+            this.props.navigation.navigate('AlbumsDetails', {
+                callType: 'QiCoilTab',
+                albumArray: dataArray,
+                transition: 'bottomUp',
+                onNavigateBack: this.handleOnNavigateBack.bind(this),
+            });
+        }else{
+            this.props.navigation.navigate('MasterQuantumSubView', { transition: 'bottomUp' });
+        }
     }
 
     render() {

@@ -111,17 +111,20 @@ export default class SplashScreenView extends Component {
         // setTimeout(function () {
         // this.getData()
         // }.bind(this), 2000);
+        // setTimeout(function () {
+        //     this.setState({ showSplashScreenImage: 2 }, () => {
+        //         setTimeout(function () {
+        //             this.setState({ showSplashScreenImage: 3 }, () => {
+        //                 setTimeout(function () {
+        //                     this.props.navigation.navigate('LandingView', { transition: 'bottomUp' });
+        //                 }.bind(this), 2000);
+        //             });
+        //         }.bind(this), 2000);
+        //     });
+        // }.bind(this), 2000);
         setTimeout(function () {
-            this.setState({ showSplashScreenImage: 2 }, () => {
-                setTimeout(function () {
-                    this.setState({ showSplashScreenImage: 3 }, () => {
-                        setTimeout(function () {
-                            this.props.navigation.navigate('LandingView', { transition: 'bottomUp' });
-                        }.bind(this), 2000);
-                    });
-                }.bind(this), 2000);
-            });
-        }.bind(this), 2000);
+            this.props.navigation.navigate('LandingView', { transition: 'bottomUp' });
+        }.bind(this), 1000);
     }
 
     componentWillUnmount() {
@@ -140,12 +143,12 @@ export default class SplashScreenView extends Component {
                     : null}
                 <View style={[]}>
                     <ImageBackground
-                        source={this.state.showSplashScreenImage == 1 ? require('../Images/SplashScreen_1.png') : this.state.showSplashScreenImage == 2 ? require('../Images/SplashScreen_2.png') : require('../Images/SplashScreen_3.png')}
+                        source={this.state.showSplashScreenImage == 1 ? require('../Images/SplashScreen_4.jpg') : this.state.showSplashScreenImage == 2 ? require('../Images/SplashScreen_2.png') : require('../Images/SplashScreen_3.png')}
                         style={[AppCommon.splashScreenLogo, Common.justifyFEnd, Common.alignItmCenter]}
                         imageStyle={[AppCommon.splashScreenLogo]}>
                         <View style={[Common.justifyCenter, Common.alignItmCenter]}>
                             <View style={[Common.justifyCenter, Common.alignItmCenter]}>
-                                <Text style={[AppCommon.h1Big2, Colors.whiteFnColor, Input.textCenter, Input.fontBold]}>Resonize for</Text>
+                                <Text style={[AppCommon.h1Big2, Colors.whiteFnColor, Input.textCenter, Input.fontBold]}></Text>
                             </View>
                             <View style={[Common.marginTop3, Common.flexRow, Common.justifyCenter, Common.alignItmCenter]}>
                                 <Image source={require('../Images/SplashScreenLogo_1.png')} style={[Common.width50, Common.height50, { resizeMode: "contain" }]} />

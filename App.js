@@ -302,7 +302,7 @@ const AppNavigator = createStackNavigator(
     HigherQuantumSubView: { screen: HigherQuantumSubView },
   },
   {
-    initialRouteName: 'LandingView', //LandingView // Tab
+    initialRouteName: 'SplashScreenView', //LandingView // Tab
     headerMode: 'none',
     transitionConfig: TransitionConfiguration,
     defaultNavigationOptions: {
